@@ -6,8 +6,8 @@ const Sequelize = require('sequelize');
 //   logging: true
 // });
 
-const sequelize = new Sequelize(process.env.MYSQL_DB, process.env.MYSQL_USER, process.env.MYSQL_PASSWORD, {
-  host: process.env.MYSQL_HOST,
+const sequelize = new Sequelize(process.env.DB_URL, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST,
   dialect: 'mysql',
   logging: true
 });
