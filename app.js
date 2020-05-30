@@ -78,7 +78,7 @@ app.use((req, res, next) => {
   })
 });
 
-app.use(shopRoutes);
+app.use('/shop', shopRoutes);
 app.use(authRoutes);
 
 myStore.sync()
