@@ -1,0 +1,16 @@
+include ../includes/head.pug
+include ../includes/navigation.pug
+include ../includes/container.pug
+
+  if errorMessages.length > 0
+    p=errorMessages
+  if successMessages.length > 0
+  p=successMessages
+  main.form-container
+    form.form(action="/login" method="POST")
+      label(for="email") Email
+      input(type="email" name="email")
+      label(for="password") Password
+      input(type="password" name="password")
+      button(type="submit" class="btn") Login
+    a(href="/reset-password") Reset password

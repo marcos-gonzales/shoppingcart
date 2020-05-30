@@ -1,0 +1,18 @@
+include includes/head.pug
+include includes/navigation.pug
+include includes/container.pug
+
+  if errors
+    p #{errors}
+
+  main.form-container
+    form.form(action=`/shop/edit-product/${id}` method="POST" enctype="multipart/form-data")
+      label(for="title") Title
+      input(type="text" name="title" value=`${product.title}`)
+      label(for="price") Price
+      input(type="number" name="price" value=`${product.price}`)
+      label(for="imageUrl") Image
+      input(type="file" name="imageUrl")
+      label(for="description") Description
+      textarea(name="description", cols="30", rows="5") #{product.description}
+      button.btn(type="submit") Submit

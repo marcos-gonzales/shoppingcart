@@ -1,0 +1,28 @@
+include includes/head.pug
+include includes/navigation.pug
+include includes/container.pug
+
+  if messages.length > 0
+    p.login-flash #{messages}
+  if success_messages.length > 0
+    p #{success_messages}  
+
+  main.title ShopsRUS
+
+  include includes/search-form.pug
+
+  .container
+    if products.length <= 0
+      p No products found!
+    else 
+      for product in products
+        section.product-card
+          .product
+            p.product-title #{product.title}
+            .image-container
+              a(href=`/shop/product-detail/${product.id}`)
+                img.image(src=`/${product.imageUrl}` alt=product.title)
+            p.product-description #{product.description}
+            form(action="shop/add-to-cart" method="POST")
+              input(type="hidden" name="id" value=product.id)  
+              button(type="submit" class="btn" id="submit") Add to Cart

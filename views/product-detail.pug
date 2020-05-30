@@ -1,0 +1,15 @@
+include includes/head.pug
+include includes/navigation.pug
+include includes/container.pug
+
+  h1=pageTitle
+
+  include includes/search-form.pug
+  main
+    if(product.length < 0)
+      p No products found
+    else 
+      p #{product.title}
+      img(src=`/${product.imageUrl}`)
+      p #{product.description}
+      

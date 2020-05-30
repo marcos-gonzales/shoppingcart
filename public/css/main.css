@@ -1,0 +1,284 @@
+/* #4ECDC4 - teal #556270 -  gray #e8fff6 - white */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  background-color:  #556270;
+}
+/* ----------- CONTAINERS ---------------- */
+
+.form-container {
+  margin-top: 20px;
+}
+
+.main-container {
+ background-color: #556270; 
+ padding-top: 1px;
+ height: 100%;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-flow: row;
+  margin-top: 30px;
+}
+
+/* ----------------PRODUCT STYLING---------------- */
+
+.product-card {
+  padding: 50px;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 15px;
+  text-align: center;
+  background-color: #4ECDC4;
+  padding: 10px;
+  border: 1px solid #92d267;
+  box-shadow: 2px 2px 14px #52878c;
+  border-radius: 10px;
+  height: 90%;
+}
+
+.product-title {
+  padding: 5px;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+
+.product-description {
+  font-size: 18px;
+  padding: 3px;
+}
+
+/* -----------CART--------------- */
+
+.cart-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr))
+}
+
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  margin: 15px;
+  text-align: center;
+  background-color: #4ECDC4;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.cart-image  {
+  height: 150px;
+  width: 150px;
+}
+
+.order-now {
+  text-align: center;
+  display: flex;
+}
+
+.cart-delete-now {
+  grid-row-start : -1;
+  grid-column-end: span 2;
+}
+
+/* ------------------checkout--------------- */
+
+.checkout-container {
+  max-width: 60%;
+  margin: 20px auto;
+}
+
+.checkout-card {
+  display: grid;
+}
+
+.checkout-product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  margin: 15px;
+  text-align: center;
+  background-color: #4ECDC4;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.checkout {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.checkout h2 {
+  font-size: 30px;
+  color: gold;
+  margin-bottom: 5px;
+}
+
+/* ------------ORDERS------------------ */
+
+.order-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 60%;
+  margin: 20px auto;
+  background-color: #4ECDC4;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.nested-order-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: row;
+  margin-top: 30px;
+  border-top: dotted 2px white;
+  padding: 15px;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+.title-container {
+  grid-column: 1 / 3 ;
+  justify-self: center;
+  align-self: center;
+}
+
+.order-card {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.order-title-product {
+  font-size: 20px;
+}
+
+/* -----------IMAGES------------- */
+
+.image-container {
+  width: 100%;
+}
+
+img.image {
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+}
+
+
+/* --------------FORMS AND INPUTS---------------- */
+
+.search-form {
+  display: grid;
+  max-width: 50%;
+  margin: 0 auto;
+  grid-gap: 12px;
+  margin-top: 30px;
+  color: #e8fff6;
+}
+
+.search-form input {
+  border-radius: 10px;
+}
+
+.form {
+  display: grid;
+  max-width: 50%;
+  margin: 20px auto;
+  grid-gap: 12px;
+}
+
+label {
+  font-size: 28px;
+}
+
+input {
+  border: 1px solid green;
+  padding: 15px;
+  font-size: 20px;
+}
+
+textarea {
+  font-size: 20px;
+  border: 1px solid green;
+}
+
+/* ----------BUTTON STYLING------------- */
+
+.btn {
+  padding: 2px;
+  font-size: 30px;
+  border-radius: 10px;
+  background-color: #556270;
+  color: #4ECDC4;
+  cursor: pointer;
+  width: 45%;
+  margin: 10px auto 0px;
+  text-decoration: none;
+  border: solid 2px #d0c1c1;
+}
+
+.btn:hover, .btn:active, .btn:hover, .btn:active, .btn a:hover, .btn a:active {
+  color: #f4f9f4;
+  background-color: #4ECDC4;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #4ECDC4;
+}
+
+/* -----------FLASH MESSAGES------------- */
+.login-flash {
+  position: absolute;
+  margin-top: 15px;
+  color: #4ECDC4;
+}
+.error {
+  border: 2px solid #ff1a1a;
+}
+
+.errorMessage {
+  color: #ff5353;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* -------------TITLES------------ */
+
+.title {
+  text-align: center;
+  font-size: 60px;
+  letter-spacing: 9px;
+  font-weight: 600;
+  color: #e8fff6;
+  text-decoration: underline;
+  padding-top: 30px;
+}
+
+.page-title {
+  color: #e8fff6;
+  text-align: center;
+}
+
+.cart-title {
+  color: white;
+  text-decoration: underline;
+  font-size: 22px;
+  margin-bottom: 20px;
+}

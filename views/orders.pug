@@ -1,0 +1,21 @@
+include includes/head.pug
+include includes/navigation.pug
+include includes/container.pug
+
+  h1 orders
+  .order-container
+    if orders.length > 0
+      each order in orders
+        .nested-order-container
+          .title-container
+            p.cart-title invoice number: #{order.id}
+          each product in order.products
+            .order-card
+              p.order-title-product #{product.title}
+              p #{product.description}
+              p Quantity: #{product.orderItem.qty}        
+              p Total: #{order.total}
+            .order-image
+              img(src=`/${product.imageUrl}` height="150px" width="150px ")
+    else 
+      p no orders!

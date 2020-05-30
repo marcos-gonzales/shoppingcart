@@ -1,0 +1,30 @@
+include includes/head.pug
+include includes/navigation.pug
+include includes/container.pug
+
+  h1.page-title Checkout
+  .checkout-container
+    if products  
+      each product in products
+        .cart-item
+          .cart-stuff
+            p.cart-title #{product.title}
+            p #{product.description}
+            p Price: $#{product.price}.00
+            p quantity: #{product.cartItem.qty}
+          .checkout-image
+            img(src=`/${product.imageUrl}` class="cart-image")
+  .checkout            
+    h2 Total: $#{totalSum}.00
+    button(id="orderBtn" class="btn") Order
+  script(src="https://js.stripe.com/v3/")
+  script.
+    var stripe = Stripe('pk_test_5bMMJoXwkUHUXkxN8IbVCbtL00BxYtU3IW');
+    const orderBtn = document.getElementById('orderBtn')
+    orderBtn.addEventListener('click', function() {
+      stripe.redirectToCheckout({
+        sessionId: '#{sessionId}'
+      })
+    })
+  if products.length < 0
+    h1 Nothing in checkout!  

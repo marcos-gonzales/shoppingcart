@@ -1,0 +1,21 @@
+nav.nav-bar
+  ul
+    li 
+      a(href="/shop" class=(path === "/" ? "active" : undefined)) Home
+    
+    if isAuthenticated === true
+      li
+        a(href="/shop/products" class=(path === "/shop/products" ? "active" : undefined)) Products
+      li
+        a(href="/shop/add-product" class=(path === "/shop/add-product" ? "active" : undefined)) Add Product
+      li
+        a(href="/shop/add-to-cart" class=(path === "/shop/add-to-cart" ? "active" : undefined)) Shopping Cart
+      li
+        a(href="/shop/orders" class=(path === "/shop/orders" ? "active" : undefined)) Orders  
+      li
+        a(href="/logout" class=(path === "/logout" ? "active" : undefined)) Logout
+    else
+      li
+        a(href="/login" class=(path === "login" ? "active" : undefined)) Login
+      li
+        a(href="/signup" class=(path === "/signup" ? "active" : undefined)) Sign Up

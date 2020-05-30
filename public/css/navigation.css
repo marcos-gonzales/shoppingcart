@@ -1,0 +1,28 @@
+.active {
+  color: #f4f9f4 !important;
+}
+
+.nav-bar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color:  #4ECDC4;
+  color: #587760;
+  padding: 14px;
+  font-size: 18px;
+}
+
+.nav-bar li a{
+  text-decoration: none;
+  cursor: pointer;
+  color: #556270;
+}
+
+.nav-bar li {
+  list-style: none;
+}
+
+.nav-bar li a:hover, .nav-bar li a:active {
+  color: #f4f9f4 !important;
+}
+

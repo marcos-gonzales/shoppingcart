@@ -1,0 +1,27 @@
+include includes/head.pug
+include includes/navigation.pug
+include includes/container.pug
+
+  main.title ShopsRUS
+
+  include includes/search-form.pug
+
+  if messages.length > 0
+    p #{messages}
+  .container
+    if products.length <= 0
+      p No products found!
+    else 
+      for product in products
+        section.product-card
+          .product
+            p #{product.title}
+            .image-container
+              img.image(src=`/${product.imageUrl}` alt=product.title)
+            p #{product.description}
+            br
+            a(href=`/shop/edit-product/${product.id}` class="btn") Edit
+            form(action=`delete/${product.id}` method="POST")
+              input(type="hidden" name="id" value=product.id)  
+              button(type="submit" class="btn" id="submit") Delete
+  script(src="/js/index.js")            

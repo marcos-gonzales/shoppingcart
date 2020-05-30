@@ -1,0 +1,23 @@
+include includes/head.pug
+include includes/navigation.pug
+include includes/container.pug
+
+  h1.page-title Shopping Cart
+  section.cart-container
+    if products  
+      each product in products
+        .cart-item
+          .cart-stuff
+            p.cart-title #{product.title}
+            p #{product.description}
+            p Price: $#{product.price}.00
+            p Quantity: #{product.cartItem.qty}
+          .cart-image-container
+            img(src=`/${product.imageUrl}` class="cart-image")
+          .cart-delete-now
+            form(action=`/shop/delete-cart-item/${product.id}` method="POST")
+              button(type="submit" class="btn") Delete
+  if products.length <= 0
+    p Nothing in cart!
+    .order-now  
+      a(href="/shop/checkout" class="btn" id="orderNow") Order now!

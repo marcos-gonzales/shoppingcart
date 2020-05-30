@@ -1,0 +1,26 @@
+include includes/head.pug
+include includes/navigation.pug
+include includes/container.pug
+
+  h1.page-title Add Product
+
+  if errors
+    p #{errors}
+
+  if errorsTitle
+    p #{errorsTitle}
+  p.errorMessage
+
+
+  main.form-container
+    form.form(action="add-product" method="POST" enctype="multipart/form-data")
+      label(for="title") Title
+      input(type="text" name="title" placeholder="a boat.." value=title id="title" class=(errorsTitle === "title" ? "error" : undefined))
+      label(for="price") Price
+      input(type="number" name="price" placeholder="40.00" value=price class=(errorsTitle === "price" ? "error" : undefined)) 
+      label(for="imageUrl") Image
+      input(type="file" name="image" class=(errorsTitle === "image" ? "error" : undefined))
+      label(for="description") Description
+      textarea(name="description" placeholder="a really nice wooden boat.." cols="30" rows="5" id="description" class=(errorsTitle === "description" ? "error" : undefined)) #{description}
+      button.btn(type="submit") Submit
+  script(src="/js/front-end-validation.js")
