@@ -16,12 +16,12 @@ const myStore = new SequelizeStore({
   db: sequelize
 });
 
-const Product = require('./models/product');
-const User = require('./models/user');
-const Cart = require('./models/cart');
-const CartItem = require('./models/cartItem');
-const Order = require('./models/order');
-const OrderItem = require('./models/order-item');
+const Product = require('./models').Product;
+const User = require('./models').User;
+const Cart = require('./models').Cart;
+const CartItem = require('./models').CartItem;
+const Order = require('./models').Order;
+const OrderItem = require('./models').OrderItem;
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
