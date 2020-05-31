@@ -13,7 +13,7 @@ include includes/container.pug
             .order-card
               p.order-title-product #{product.title}
               p #{product.description}
-              p Quantity: #{product.orderItem.qty}        
+              p Quantity: #{product.OrderItem.qty}        
               p Total: #{order.total}
             .order-image
               img(src=`/${product.imageUrl}` height="150px" width="150px ")

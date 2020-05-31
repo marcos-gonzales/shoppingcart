@@ -180,7 +180,7 @@ exports.postCart = (req, res, next) => {
         product = products[0];
       }
       if(product) {
-        let oldQuantity = product.cartItem.qty;
+        let oldQuantity = product.CartItem.qty;
         newQuantity = oldQuantity + 1;
         return product;
       }
@@ -213,7 +213,7 @@ exports.getCart = (req, res, next) => {
       if(products[0] === undefined) {
         cartItem = ''
       } else {
-        cartItem = products.cartItem 
+        cartItem = products.CartItem 
       }      
       res.render('cart', {
         products: products,
@@ -238,7 +238,7 @@ exports.deleteCart = (req, res, next) => {
   .then(cart => {
    return cart.getProducts({ where: { id: id }})
     .then(products => {
-      products[0] .cartItem.destroy()
+      products[0] .CartItem.destroy()
     })
     .then(result => {
       res.redirect('/shop/add-to-cart')
@@ -399,8 +399,7 @@ exports.postOrder = (req, res, next) => {
       return req.user.createOrder()
     .then(order => {
       order.addProducts(products.map(product => {
-        product.orderItem = { qty: product.cartItem.qty}
-        console.log(product.orderItem)
+        product.OrderItem = { qty: product.CartItem.qty}
         return product;
       }))
     })
