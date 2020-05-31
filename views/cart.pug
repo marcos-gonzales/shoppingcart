@@ -17,8 +17,8 @@ include includes/container.pug
           .cart-delete-now
             form(action=`/shop/delete-cart-item/${product.id}` method="POST")
               button(type="submit" class="btn") Delete
-    .order-now  
-      a(href="/shop/checkout" class="btn" id="orderNow") Order now!
+      .order-now  
+        a(href="/shop/checkout" class="btn" id="orderNow") Order now!
   if products.length <= 0
     p Nothing in cart!
 
