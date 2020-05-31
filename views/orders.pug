@@ -9,7 +9,7 @@ include includes/container.pug
         .nested-order-container
           .title-container
             p.cart-title invoice number: #{order.id}
-          each product in order.products
+          each product in order.Products
             .order-card
               p.order-title-product #{product.title}
               p #{product.description}
