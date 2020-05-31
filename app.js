@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const multer = require('multer');
 const compression = require('compression');
+const dotenv = require('dotenv').config();
 
 const myStore = new SequelizeStore({
   db: sequelize
@@ -52,7 +53,6 @@ const fileSystem = (req, file, cb) => {
 // Order.belongsTo(User);
 // Order.belongsToMany(Product, { through: OrderItem});
 // User.hasMany(Order);
-
 
 app.set('view engine', 'pug');
 app.use(multer({dest: 'images', storage: fileStorage, fileSystem: fileSystem}).single('image'))
