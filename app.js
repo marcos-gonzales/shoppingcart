@@ -45,15 +45,6 @@ const fileSystem = (req, file, cb) => {
   }
 };
 
-// Product.belongsTo(User);
-// User.hasMany(Product);
-// User.hasOne(Cart);
-// Cart.belongsTo(User);
-// Cart.belongsToMany(Product, { through: CartItem});
-// Order.belongsTo(User);
-// Order.belongsToMany(Product, { through: OrderItem});
-// User.hasMany(Order);
-
 app.set('view engine', 'pug');
 app.use(multer({dest: 'images', storage: fileStorage, fileSystem: fileSystem}).single('image'))
 app.use(express.static(path.join(__dirname, 'public')));
@@ -95,3 +86,12 @@ myStore.sync()
 // }).catch(err => {
 //   console.log(err)
 // })
+
+// Product.belongsTo(User);
+// User.hasMany(Product);
+// User.hasOne(Cart);
+// Cart.belongsTo(User);
+// Cart.belongsToMany(Product, { through: CartItem});
+// Order.belongsTo(User);
+// Order.belongsToMany(Product, { through: OrderItem});
+// User.hasMany(Order);
