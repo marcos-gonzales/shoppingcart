@@ -14,7 +14,7 @@ include includes/container.pug
               p.order-title-product #{product.title}
               p #{product.description}
               p Quantity: #{product.OrderItem.qty}        
-              p Total: #{product.OrderItem.price * product.orderItem.qty}
+              p Total: #{product.OrderItem.price * product.OrderItem.qty}
             .order-image
               img(src=`/${product.imageUrl}` height="150px" width="150px ")
     else 
