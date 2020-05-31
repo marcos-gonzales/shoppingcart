@@ -90,6 +90,7 @@ exports.postProduct = (req, res, next) => {
     image = fullName;
   }
 
+  console.log(req.file)
   req.user.createProduct({
     title: title,
     price: price,
