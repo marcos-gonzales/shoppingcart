@@ -318,16 +318,15 @@ exports.getCheckoutSuccess = (req, res, next) => {
 };
 
 exports.getOrder = (req, res, next) => {
-  let total = 0;
   const id = req.body.id;
   req.user.getOrders({ include: ['Products']})
   .then(orders => {
+    console.log(orders)
     res.render('orders', {
       pageTitle: 'Orders',
       path: '/shop/orders',
       orders: orders,
       isAuthenticated: req.session.isLoggedIn,
-      total: total
     });
   }).catch(err => {
     console.log(err)
