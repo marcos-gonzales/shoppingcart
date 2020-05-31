@@ -66,9 +66,9 @@ exports.postSignup = (req, res, next) => {
         sgMail.setApiKey(key)
         const msg = {
           to: email,
-          from: 'billgates@hotmail.com',
-          subject: 'Sending with Twilio SendGrid is Fun',
-          text: 'and easy to do anywhere, even with Node.js',
+          from: 'markymarrk@gmail.com.com',
+          subject: 'Thanks for signing up!',
+          text: 'Welcome to ShopsRus',
           html: `<h1>Hello, <strong>${name}</strong></h1> 
           <p>Thank you for signing up ${name}. Don't forget to check out and follow me on twitter <a href="https://twitter.com/marrky_marrk">markymarrk</p>`
         };
@@ -183,8 +183,8 @@ exports.postResetPassword = (req, res, next) => {
     const msg = {
       to: email,
       from: 'markymarrk@gmail.com',
-      subject: 'Thanks for signing up!',
-      text: 'Welcome to shopsRus',
+      subject: 'Forgot Password :( ???',
+      text: 'No problem just follow the instructions below',
       html: `<h1>Hello, <strong>${email}</strong></h1> 
       <p> Hello. Click here to reset your password. </p>
       <a href="http://shopsrus.herokuapp.com/reset-password/${buffer}">Reset Password</a>`
