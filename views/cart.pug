@@ -11,7 +11,7 @@ include includes/container.pug
             p.cart-title #{product.title}
             p #{product.description}
             p Price: $#{product.price}.00
-            p Quantity: #{product.cartItem.qty}
+            p Quantity: #{product.CartItem.qty}
           .cart-image-container
             img(src=`/${product.imageUrl}` class="cart-image")
           .cart-delete-now
