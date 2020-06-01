@@ -66,7 +66,7 @@ exports.postSignup = (req, res, next) => {
         sgMail.setApiKey(key)
         const msg = {
           to: email,
-          from: 'markymarrk@gmail.com.com',
+          from: 'markymarrk@gmail.com',
           subject: 'Thanks for signing up!',
           text: 'Welcome to ShopsRus',
           html: `<h1>Hello, <strong>${name}</strong></h1> 
