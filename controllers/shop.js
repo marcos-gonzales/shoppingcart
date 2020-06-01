@@ -83,8 +83,8 @@ exports.postProduct = (req, res, next) => {
   }
 
   if(req.file.mimetype === 'image/heic') {
-    gm('public/images/' + req.file.filename)
-    .write(`public/images/${fullName}`, function(err) {
+    gm('images/' + req.file.filename)
+    .write(`images/${fullName}`, function(err) {
       if (err) console.log(err)
     });
     image = fullName;
