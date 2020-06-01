@@ -11,7 +11,6 @@ const cookieParser = require('cookie-parser');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const multer = require('multer');
 const compression = require('compression');
-const dotenv = require('dotenv').config();
 
 const myStore = new SequelizeStore({
   db: sequelize
