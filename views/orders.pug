@@ -2,13 +2,13 @@ include includes/head.pug
 include includes/navigation.pug
 include includes/container.pug
 
-  h1 orders
+  h1.page-title Orders
   .order-container
     if orders.length > 0
       each order in orders
         .nested-order-container
           .title-container
-            p.cart-title invoice number: #{order.id}
+            p.cart-title Nnvoice number: #{order.id}
           each product in order.Products
             .order-card
               p.order-title-product #{product.title}

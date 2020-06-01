@@ -19,6 +19,7 @@ body {
  background-color: #556270; 
  padding-top: 1px;
  height: 100%;
+ overflow-x: hidden;
 }
 
 
@@ -279,6 +280,6 @@ textarea {
 .cart-title {
   color: white;
   text-decoration: underline;
-  font-size: 22px;
+  font-size: 25px;
   margin-bottom: 20px;
 }
