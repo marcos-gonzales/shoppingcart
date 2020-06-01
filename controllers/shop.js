@@ -8,6 +8,8 @@ var fs = require('fs')
 const { Op } = require('sequelize');
 const stripe = require('stripe')(process.env.STRIPE_SK)
 const models = require( '../models/index');
+const sgMail = require('@sendgrid/mail');
+const key = process.env.SEND_GRID_KEY;
 
 exports.getSearch = (req, res, next) => {
   if(req.query.searchValue) {
@@ -390,6 +392,7 @@ exports.getCheckout = (req, res, next) => {
 };
 
 exports.postOrder = (req, res, next) => {
+  console.log(req.user)
   let fetchedCart;
   req.user.getCart()
   .then(cart => {
@@ -410,6 +413,25 @@ exports.postOrder = (req, res, next) => {
   .then(result => {
     return fetchedCart.setProducts(null);
   })
+  // .then(user => {
+  //   sgMail.setApiKey(key)
+  //   const msg = {
+  //     to: email,
+  //     from: 'markymarrk@gmail.com.com',
+  //     subject: 'Thanks for signing up!',
+  //     text: 'Welcome to ShopsRus',
+  //     html: `<h1>Hello, <strong>${name}</strong></h1> 
+  //     <p>Thank you for signing up ${name}. Don't forget to check out and follow me on twitter <a href="https://twitter.com/marrky_marrk">markymarrk</p>`
+  //   };
+  //   sgMail.send(msg)
+  //   .then(() => {}, error => {
+  //     console.error(error);
+ 
+  //     if (error.response) {
+  //       console.error(error.response.body)
+  //    }
+  //   })
+  // })
   .then(result => {
     res.redirect('/shop/orders');
   })
