@@ -421,7 +421,7 @@ exports.postOrder = (req, res, next) => {
       from: 'markymarrk@gmail.com',
       subject: 'Thank you for your order!',
       text: 'THanks for shopping with ShopsRus',
-      html: `<h1>Hello, <strong>${name}</strong></h1> 
+      html: `<h1>Hello, <strong>${email}</strong></h1> 
       <p>We appreciate your business!</p>`
     };
     sgMail.send(msg)
