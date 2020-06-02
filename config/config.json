@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "root",
-    "password": "fishDogHouse109@!",
-    "database": "database_development",
+    "username": "DEV_USER",
+    "password": "DEV_PASSWORD",
+    "database": "tutorial",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
