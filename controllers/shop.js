@@ -389,6 +389,7 @@ exports.getCheckout = (req, res, next) => {
 };
 
 exports.postOrder = (req, res, next) => {
+  const name = req.user.name
   const email = req.user.email
   let fetchedCart;
   req.user.getCart()
@@ -418,7 +419,7 @@ exports.postOrder = (req, res, next) => {
       from: 'markymarrk@gmail.com',
       subject: 'Thank you for your order!',
       text: 'THanks for shopping with ShopsRus',
-      html: `<h1>Hello, <strong>${email}</strong></h1> 
+      html: `<h1>Hello, <strong>${name}</strong></h1> 
       <p>We appreciate your business!</p>`
     };
     sgMail.send(msg)
