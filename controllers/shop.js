@@ -135,7 +135,6 @@ exports.deleteProduct = (req, res, next) => {
 exports.getProduct = async (req, res, next) => {
   try {
     const id = req.params.id;
-    console.log(id)
     const findProduct = await Product.findOne({ where: { id: id }})  
       if(!findProduct) {
         res.redirect('/shop')
@@ -308,7 +307,6 @@ exports.getCheckoutSuccess = (req, res, next) => {
   const id = req.body.id;
   req.user.getOrders({ include: ['Products']})
   .then(orders => {
-    console.log(orders[0].products[0])
     res.render('orders', {
       pageTitle: 'Orders',
       path: '/shop/orders',
@@ -324,7 +322,6 @@ exports.getOrder = (req, res, next) => {
   const id = req.body.id;
   req.user.getOrders({ include: ['Products']})
   .then(orders => {
-    console.log(orders)
     res.render('orders', {
       pageTitle: 'Orders',
       path: '/shop/orders',
@@ -415,6 +412,7 @@ exports.postOrder = (req, res, next) => {
     return fetchedCart.setProducts(null);
   })
   .then(user => {
+    console.log('acutally got here!')
     sgMail.setApiKey(key)
     const msg = {
       to: email,
