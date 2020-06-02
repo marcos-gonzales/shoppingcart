@@ -284,6 +284,8 @@ textarea {
   margin-bottom: 20px;
 }
 
+/*-------------------FORGOT-PASSWORD-------------------- */
+
 .forgot-password-container {
   display: flex;
 }
@@ -293,4 +295,10 @@ textarea {
   width: 50%;
   margin: 20px auto;
   grid-gap: 20px;
+}
+
+.reset-password-link {
+  margin-left: 20px;
+  color: #CCF9F5;
+  cursor: pointer;
 }
