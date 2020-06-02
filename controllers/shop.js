@@ -389,7 +389,6 @@ exports.getCheckout = (req, res, next) => {
 };
 
 exports.postOrder = (req, res, next) => {
-  console.log(req.user.email)
   const email = req.user.email
   let fetchedCart;
   req.user.getCart()

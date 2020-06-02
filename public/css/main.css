@@ -283,3 +283,14 @@ textarea {
   font-size: 25px;
   margin-bottom: 20px;
 }
+
+.forgot-password-container {
+  display: flex;
+}
+
+.form-forgot-password {
+  display: grid;
+  width: 50%;
+  margin: 20px auto;
+  grid-gap: 20px;
+}
