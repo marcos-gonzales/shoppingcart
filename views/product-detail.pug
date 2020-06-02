@@ -2,14 +2,19 @@ include includes/head.pug
 include includes/navigation.pug
 include includes/container.pug
 
-  h1=pageTitle
+  h1.title=pageTitle
 
   include includes/search-form.pug
   main
     if(product.length < 0)
       p No products found
     else 
-      p #{product.title}
-      img(src=`/${product.imageUrl}`)
-      p #{product.description}
+      .product-detail-container
+        .product-detail-card
+          p.product-title #{product.title}
+          img(src=`/${product.imageUrl}` class='product-detail-image')
+          p.product-description #{product.description}
+          form(action="shop/add-to-cart" method="POST")
+            input(type="hidden" name="id" value=product.id)  
+            button(type="submit" class="btn" id="submit") Add to Cart
       

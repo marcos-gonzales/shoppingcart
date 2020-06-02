@@ -1,11 +1,40 @@
-@media screen and (max-width: 950px) and (min-width: 700px) {
+@media screen and (max-width: 1080px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) and (min-width: 500px) {
   .container {
     grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 50px;
+  }
+  .order-container {
+    max-width: 70%;
+  }
+  .product-detail-image {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 50px;
+  }
+  .order-container {
+    max-width: 70%;
+  }
+  .product-detail-image {
+    height: 350px;
+    width: 350px;
+  }
+  .product-detail-card {
+    padding: 20px;
   }
 }

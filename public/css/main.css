@@ -28,6 +28,7 @@ body {
   grid-template-columns: repeat(3,1fr);
   grid-auto-flow: row;
   margin-top: 30px;
+  justify-content: center;
 }
 
 /* ----------------PRODUCT STYLING---------------- */
@@ -52,7 +53,7 @@ body {
 
 .product-title {
   padding: 5px;
-  font-size: 20px;
+  font-size: 23px;
   letter-spacing: 0.3px;
 }
 
@@ -191,6 +192,7 @@ img.image {
   grid-gap: 12px;
   margin-top: 30px;
   color: #e8fff6;
+  justify-content: center;
 }
 
 .search-form input {
@@ -202,6 +204,7 @@ img.image {
   max-width: 50%;
   margin: 20px auto;
   grid-gap: 12px;
+  justify-content: center;
 }
 
 label {
@@ -301,4 +304,24 @@ textarea {
   margin-left: 20px;
   color: #CCF9F5;
   cursor: pointer;
+}
+
+/* -------------Product Detail-------------- */
+
+.product-detail-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.product-detail-card {
+  background-color: #4ECDC4;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.product-detail-image {
+  height: 500px;
+  width: 500px;
 }

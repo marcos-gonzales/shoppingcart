@@ -8,7 +8,7 @@ include includes/container.pug
       each order in orders
         .nested-order-container
           .title-container
-            p.cart-title Nnvoice number: #{order.id}
+            p.cart-title Invoice number: #{order.id}
           each product in order.Products
             .order-card
               p.order-title-product #{product.title}

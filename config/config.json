@@ -1,7 +1,8 @@
+
 {
   "development": {
-    "username": "DEV_USER",
-    "password": "DEV_PASSWORD",
+    "username": "root",
+    "password": "fishDogHouse109@!",
     "database": "tutorial",
     "host": "127.0.0.1",
     "dialect": "mysql",

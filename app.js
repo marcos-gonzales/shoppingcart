@@ -71,7 +71,7 @@ app.use((req, res, next) => {
 app.use('/shop', shopRoutes);
 app.use(authRoutes);
 
-myStore.sync({ force: true})
+myStore.sync()
 .then(sync => {
   app.listen(PORT, () => console.log(`connected on ${PORT}`))
 })
