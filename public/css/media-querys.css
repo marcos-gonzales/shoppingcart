@@ -18,11 +18,23 @@
     height: 350px;
     width: 350px;
   }
+  .hamburger-icon {
+    display: block;
+  }
+  .nav-bar ul {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 500px) {
+  .hamburger-icon {
+    display: block;
+  }
   .container {
     grid-template-columns: 1fr;
+  }
+  .nav-bar ul {
+    display: none;
   }
   .title {
     font-size: 50px;

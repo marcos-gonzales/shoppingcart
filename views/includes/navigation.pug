@@ -19,3 +19,31 @@ nav.nav-bar
         a(href="/login" class=(path === "login" ? "active" : undefined)) Login
       li
         a(href="/signup" class=(path === "/signup" ? "active" : undefined)) Sign Up
+
+.hamburger-icon
+  svg#hamburger-icon(viewBox="0 0 100 80" width="30" height="30")
+    rect(width="100" height="20" rx="8")
+    rect(y="30" width="100" height="20" rx="8")
+    rect(y="60" width="100" height="20" rx="8")
+.hamburger-icon-content#hamburger-icon-content
+  ul
+    li 
+      a(href="#" class=(path === "/" ? "active" : undefined) id="mobile-nav") Home
+    
+    if isAuthenticated === true
+      li
+        a(href="/shop/products" class=(path === "/shop/products" ? "active" : undefined) id="mobile-nav") Products
+      li
+        a(href="/shop/add-product" class=(path === "/shop/add-product" ? "active" : undefined) id="mobile-nav") Add Product
+      li
+        a(href="/shop/add-to-cart" class=(path === "/shop/add-to-cart" ? "active" : undefined) id="mobile-nav") Shopping Cart
+      li
+        a(href="/shop/orders" class=(path === "/shop/orders" ? "active" : undefined) id="mobile-nav") Orders  
+      li
+        a(href="/logout" class=(path === "/logout" ? "active" : undefined) id="mobile-nav") Logout
+    else
+      li
+        a(href="/login" class=(path === "login" ? "active" : undefined) id="mobile-nav") Login
+      li
+        a(href="/signup" class=(path === "/signup" ? "active" : undefined) ) Sign Up
+

@@ -9,18 +9,18 @@ const Sequelize = require('sequelize');
 
 
 // if(process.env.NODE_ENV === 'production') {
-//   const sequelize = new Sequelize(process.env.DB_URL, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
-//     host: process.env.DB_HOST,
-//     dialect: 'mysql',
-//     logging: true
-//   });
-// } else {
-  const sequelize = new Sequelize('tutorial', 'root', 'fishDogHouse109@!', {
-    host: 'localhost',
+  const sequelize = new Sequelize(process.env.DB_URL, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
     dialect: 'mysql',
     logging: true
   });
-// }
+// } else {
+//   const sequelize = new Sequelize('tutorial', 'root', 'fishDogHouse109@!', {
+//     host: 'localhost',
+//     dialect: 'mysql',
+//     logging: true
+//   });
+// // }
 
 
 
