@@ -38,16 +38,47 @@
   padding: 14px;
 }
 
-.hamburger-icon-content {
+.hamburger-icon-contents {
+  display: block;
   width: 100%;
   height: 100%;
   position: fixed;
   font-size: 40px;
-  opacity: 0;
   z-index: 20;
   background-color: #909cbfe3;
   padding-left: 20px;
   left: 0;
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+.hamburger-icon-content {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  font-size: 40px;
+  z-index: 20;
+  background-color: #909cbfe3;
+  padding-left: 20px;
+  left: 0;
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+.hamburger-icon-content-out {
+  visibility: hidden;
+  width: 0%;
+  height: 100%;
+  position: fixed;
+  font-size: 40px;
+  z-index: 20;
+  background-color: #909cbfe3;
+  padding-left: 20px;
+  left: 0;
+  opacity: 1;
+  animation-name: slide-out;
+  animation-duration: 1s;
 }
 
 .hamburger-icon-content ul {
@@ -63,10 +94,18 @@
   height: 24px;
 }
 
-.transition-in {
-  transition: cubic-bezier(0.77, 0, 0.175, 1) .7s;
+@keyframes slide-in {
+  0% { width: 20%;};
+  25% {width: 40%};
+  50% {width: 60%};
+  75% {width: 80%};
+  100% {width: 100%};
 }
 
-.transition-out {
-  transition: ease-out;
+@keyframes slide-out {
+  0% { width: 100%;visibility: visible};
+  25% { width: 80%;visibility: visible};
+  50% { width: 60%;visibility: visible};
+  75% { width: 40%;visibility: visible};
+  0% { width: 0%; visibility: hidden };
 }

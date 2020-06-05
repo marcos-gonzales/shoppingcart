@@ -32,7 +32,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production DB_HOST=us-cdbr-east-05.cleardb.net DB_USERNAME=b86e51e9824dc4 DB_URL=heroku_5a24e97edb129de DB_PASSWORD=1cc8ed5b",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js NODE_ENV=development"
   },
   "author": "",
   "license": "ISC"

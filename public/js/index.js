@@ -19,21 +19,25 @@ function confirmation(e) {
 hamburgerIconContent.addEventListener('click', checkforstuff)
 
 
+
 hamburgerIcon.addEventListener('click', function(e) {
-  if(hamburgerIconContent.style.opacity === '') {
-    hamburgerIconContent.classList.add('transition-in')
-    hamburgerIconContent.style.opacity = 1;
+  console.log(hamburgerIconContent.classList[0])
+  if(hamburgerIconContent.classList[0] === "hamburger-icon-content") {
+    console.log('working number 1')
+    hamburgerIconContent.classList.remove('hamburger-icon-content')
+    hamburgerIconContent.classList.add('hamburger-icon-contents')
     return
   }
 
-  if(hamburgerIconContent.style.opacity === "1") {
-    hamburgerIconContent.style.opacity = 0;
-    hamburgerIconContent.style.classList.add('transition-out')
+  if(hamburgerIconContent.classList[0] === "hamburger-icon-contents") {
+    hamburgerIconContent.classList.remove('hamburger-icon-contents')
+    hamburgerIconContent.classList.add('hamburger-icon-content-out')
+
     return
   }
-  if(hamburgerIconContent.style.opacity === "0") {
-    hamburgerIconContent.classList.add('transition-in')
-    hamburgerIconContent.style.opacity = 1;
+  if(hamburgerIconContent.classList[0] === 'hamburger-icon-content-out') {
+    hamburgerIconContent.classList.remove('hamburger-icon-content-out')
+    hamburgerIconContent.classList.add('hamburger-icon-contents')
     return
   }
 })
@@ -43,7 +47,7 @@ hamburgerIcon.addEventListener('click', function(e) {
 function checkforstuff(e) {
   console.log(e.target)
   if(e.target !== hamburgerIconContent) {
+    hamburgerIconContent.style.display = "none"
     hamburgerIconContent.style.opacity = 0;
-    hamburgerIcon.style.classList.add('transition-out');
   }
 }
