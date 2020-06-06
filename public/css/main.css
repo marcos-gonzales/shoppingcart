@@ -13,6 +13,8 @@ body {
 
 .form-container {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .main-container {
@@ -273,6 +275,8 @@ textarea {
   color: #e8fff6;
   text-decoration: underline;
   padding-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .page-title {
