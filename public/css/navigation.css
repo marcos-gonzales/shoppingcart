@@ -90,6 +90,17 @@
   padding: 10px;
 }
 
+.hamburger-icon-contents li a {
+  color: #556270;
+  text-decoration: none;
+}
+
+.hamburger-icon-content-out li a {
+  color: #556270;
+  text-decoration: none;
+}
+
+
 .hamburger-container {
   height: 24px;
 }

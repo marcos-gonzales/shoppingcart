@@ -12,7 +12,7 @@ const sgMail = require('@sendgrid/mail');
 const key = process.env.SEND_GRID_KEY;
 
 exports.getSearch = (req, res, next) => {
-  if(req.query.searchValue) {
+  if(req.query.searchValue.length > 0) {
     const regex = new RegExp(escapeRegex(req.query.searchValue), 'gi');
     const searchValue = req.query.searchValue
     Product.findAll({ where: { title: { [Op.regexp]: searchValue}}})
@@ -30,6 +30,8 @@ exports.getSearch = (req, res, next) => {
     .catch(err => {
       console.log(err)
     })
+  } else {
+    res.redirect('/shop')
   }
 };
 
