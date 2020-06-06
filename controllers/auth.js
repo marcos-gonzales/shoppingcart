@@ -118,6 +118,7 @@ exports.postLogin = (req, res, next) => {
   User.findOne({ where: { email: email }})
   .then(user => {
     if(!user) {
+      req.flash('error', 'Oops password or email is not valid')
       res.redirect('/login')
     }
    return bcrypt.compare(password, user.password)
