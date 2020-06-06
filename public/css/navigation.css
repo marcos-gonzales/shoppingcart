@@ -29,7 +29,6 @@
 /* --------------Mobile Nav---------------- */
 
 .hamburger-icon {
-  height: 100%;
   width: 100%;
   display: none;
   cursor: pointer;
@@ -50,6 +49,7 @@
   left: 0;
   animation-name: slide-in;
   animation-duration: 1s;
+  margin-top: 62px;
 }
 
 .hamburger-icon-content {
@@ -79,6 +79,7 @@
   opacity: 1;
   animation-name: slide-out;
   animation-duration: 1s;
+  margin-top: 62px;
 }
 
 .hamburger-icon-content ul {

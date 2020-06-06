@@ -47,7 +47,7 @@ hamburgerIcon.addEventListener('click', function(e) {
 function checkforstuff(e) {
   console.log(e.target)
   if(e.target !== hamburgerIconContent) {
-    hamburgerIconContent.style.display = "none"
-    hamburgerIconContent.style.opacity = 0;
+    hamburgerIconContent.classList.remove('hamburger-icon-contents')
+    hamburgerIconContent.classList.add('hamburger-icon-content-out')
   }
 }

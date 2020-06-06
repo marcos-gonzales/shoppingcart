@@ -20,6 +20,8 @@
   }
   .hamburger-icon {
     display: block;
+    position: fixed;
+    z-index: 22;
   }
   .nav-bar ul {
     display: none;
