@@ -25,5 +25,5 @@ include includes/container.pug
             p.product-description #{product.description}
             form(action="shop/add-to-cart" method="POST")
               input(type="hidden" name="id" value=product.id)  
-              button(type="submit" class="btn" id="submit") Add to Cart
+              button(type="submit" class="btn") Add to Cart
   script(src="/js/index.js")

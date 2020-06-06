@@ -61,4 +61,16 @@
   .nested-order-container {
     padding: 15px 0;
   }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .add-product-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    max-width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
 }

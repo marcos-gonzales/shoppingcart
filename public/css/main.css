@@ -13,8 +13,6 @@ body {
 
 .form-container {
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
 }
 
 .main-container {
@@ -69,7 +67,8 @@ body {
 
 .cart-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr))
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  justify-content: center;
 }
 
 .cart-item {
@@ -261,6 +260,12 @@ textarea {
 
 .errorMessage {
   color: #ff5353;
+  text-align: center;
+  font-size: 18px;
+}
+
+.successMessage {
+  color: #30DDC5;
   text-align: center;
   font-size: 18px;
 }
