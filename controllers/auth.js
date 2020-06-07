@@ -102,6 +102,7 @@ exports.postSignup = (req, res, next) => {
 };
 
 exports.getLogin = (req, res, next) => {
+  console.log(req.flash)
   res.render('auth/login', {
     path: '/login',
     pageTitle: 'Login',
@@ -125,20 +126,18 @@ exports.postLogin = (req, res, next) => {
     .then(match => {
       if(!match) {
         req.flash('error', 'Oops password or email is not valid')
-        res.redirect('/login')
+      return res.redirect('/login')
       }
       req.session.isLoggedIn = true;
       req.session.user = user;
-      req.session.save()
+      req.session.save(err => {
+        if(err) console.log(err)
+        req.flash('success', 'You have logged in!')
+        res.redirect('/shop')
+      })
     })
   })
-  .then(() => {
-    req.flash('success', 'You have logged in!')
-  })
-  .then(() => {
-    res.redirect('/shop')
-    })
-    .catch(err => {
+  .catch(err => {
       console.log(err)
     })
   .catch(err => {

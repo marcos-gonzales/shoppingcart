@@ -208,6 +208,10 @@ img.image {
   justify-content: center;
 }
 
+.reset-password-link {
+  color: #e8fff6;
+}
+
 label {
   font-size: 28px;
 }
