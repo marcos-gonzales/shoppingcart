@@ -44,4 +44,6 @@ router.get('/checkout/success', isLoggedIn.isLoggedIn, shopController.postOrder)
 
 router.get('/checkout/cancel', isLoggedIn.isLoggedIn, shopController.getCheckout)
 
+// router.get('/404', shopController.get404);
+
 module.exports = router;

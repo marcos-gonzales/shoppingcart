@@ -307,6 +307,7 @@ textarea {
   width: 50%;
   margin: 20px auto;
   grid-gap: 20px;
+  justify-content: center;
 }
 
 .reset-password-link {

@@ -23,7 +23,6 @@ hamburgerIconContent.addEventListener('click', checkforstuff)
 hamburgerIcon.addEventListener('click', function(e) {
   console.log(hamburgerIconContent.classList[0])
   if(hamburgerIconContent.classList[0] === "hamburger-icon-content") {
-    console.log('working number 1')
     hamburgerIconContent.classList.remove('hamburger-icon-content')
     hamburgerIconContent.classList.add('hamburger-icon-contents')
     return
@@ -45,7 +44,6 @@ hamburgerIcon.addEventListener('click', function(e) {
 
 
 function checkforstuff(e) {
-  console.log(e.target)
   if(e.target !== hamburgerIconContent) {
     hamburgerIconContent.classList.remove('hamburger-icon-contents')
     hamburgerIconContent.classList.add('hamburger-icon-content-out')

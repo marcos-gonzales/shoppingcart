@@ -35,8 +35,7 @@ const fileStorage = multer.diskStorage({
 const fileSystem = (req, file, cb) => {
   if (file.mimetype === 'image/jpg' || 
     file.mimetype === 'image/jpeg' || 
-    file.mimetype === 'image/png' ||
-    file.mimetype === 'image/heic') 
+    file.mimetype === 'image/png') 
   {    
     cb(null, true)
   } else {
@@ -70,7 +69,13 @@ app.use((req, res, next) => {
 
 app.use('/', shopRoutes)
 app.use('/shop', shopRoutes);
-app.use(authRoutes);
+app.use('/', authRoutes);
+
+app.use(function(req, res, next) {
+  res.status(404);
+  res.render('./404');
+});
+
 
 myStore.sync()
 .then(sync => {

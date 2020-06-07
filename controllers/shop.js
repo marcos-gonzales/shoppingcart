@@ -445,6 +445,12 @@ exports.postOrder = (req, res, next) => {
   })
 };
 
+// exports.get404 = (req, res, next) => {
+//   res.render('/404', {
+//     pageTitle: 'Page not found'
+//   })
+// };
+
 
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
